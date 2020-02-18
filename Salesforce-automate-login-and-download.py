@@ -42,19 +42,25 @@ driver.get("https://login.salesforce.com")
 # fill form and login
 search_input = driver.find_element_by_css_selector('#main-col > div > div > div:nth-child(8) > p:nth-child(1) > a > img')
 search_input.click()
+# wait for report loaded
+driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 
 # go to report
 driver.get("https://sec-b2b.my.salesforce.com/00O0K00000AoDI7")
+# wait for report loaded
+driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 # initialize an object to the location on the html page and click on it to download
-search_input = driver.find_element_by_css_selector('#main-col > div > div > div:nth-child(8) > p:nth-child(1) > a > img')
+search_input = driver.find_element_by_css_selector('.reportActions ')
 search_input.click()
 
 
 
 # go to second report
 driver.get("https://sec-b2b.my.salesforce.com/00O0K00000AnxJv")
+# wait for report loaded
+driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 # initialize an object to the location on the html page and click on it to download
-search_input = driver.find_element_by_css_selector('#main-col > div > div > div:nth-child(8) > p:nth-child(1) > a > img')
+search_input = driver.find_element_by_css_selector('.reportActions')
 search_input.click()
 
 
